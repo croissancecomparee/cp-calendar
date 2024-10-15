@@ -2,5 +2,7 @@
 <p>{{ event.description }}</p>
 <p>Location: {{ event.location }}</p>
 <p>Date: {{ event.date }}</p>
+<p><a href="{{event.link}}">Lien d'inscription</a></p>
+
 <a href="{% url 'event_edit' event.id %}">Edit</a>
 <a href="{% url 'event_delete' event.id %}">Delete</a>

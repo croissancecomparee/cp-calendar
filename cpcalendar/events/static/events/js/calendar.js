@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',  // Vue initiale (mois)
         events: events,  // Utiliser les événements chargés dynamiquement
+        eventClick: function(info) {
+            window.location.href = info.event.url;  // Redirige vers la page de détails
+        }
     });
 
     calendar.render();

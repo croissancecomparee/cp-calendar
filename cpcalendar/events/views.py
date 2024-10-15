@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models.events import Event
 from .forms import EventForm
 import json
+from django.urls import reverse
 
 
 def homepage(request):
@@ -11,6 +12,8 @@ def homepage(request):
         'title': event.title,
         'start': event.date.strftime('%Y-%m-%d %H:%M:%S'),
         'description': event.description,
+        'link': event.link,
+        'url': reverse('event_detail', args=[event.id]),
     } for event in events]
     
     events_json = json.dumps(events_list)

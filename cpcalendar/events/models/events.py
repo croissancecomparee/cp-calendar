@@ -20,6 +20,7 @@ class Event(models.Model):
         choices=EVENT_TYPE_CHOICES,
         default="other"
     )
+    link = models.CharField(max_length=500)
 
     def __str__(self):
         return self.title
