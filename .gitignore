@@ -1,0 +1,33 @@
+# Environnement virtuel
+env/
+venv/
+
+# Fichiers de compilation Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Visual Studio Code
+.vscode/
+
+# Base de données SQLite locale
+*.sqlite3
+
+# Logs
+*.log
+
+# Migrations (à inclure une fois finalisées)
+**/migrations/
+
+# Dépendances Python
+*.egg-info/
+*.eggs/
+
+# Fichiers media/upload (si vous ne voulez pas versionner les fichiers uploadés)
+media/
+
+# Fichiers temporaires
+*.tmp
+*.swp
+*.bak
+*.backup

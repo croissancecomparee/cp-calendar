@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <h1>Liste des événements</h1>
+
+    <!-- Calendrier avec les événements en JSON -->
+    <div id="calendar" data-events='{{ events_json|safe }}'></div>
+
+    <!-- Liste des événements -->
+    <ul>
+    {% for event in events %}
+        {% if event.id %}
+            <li>
+                <h2><a href="{% url 'event_detail' event.id %}">{{ event.title }}</a></h2>
+                <p>{{ event.description }}</p>
+            </li>
+        {% else %}
+            <li>
+                <h2>{{ event.title }}</h2> <!-- Si l'ID est manquant, afficher le titre sans lien -->
+                <p>{{ event.description }}</p>
+            </li>
+        {% endif %}
+        {% empty %}
+        <li>Aucun événement disponible pour le moment.</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'event_create' %}">Créer un nouvel événement</a>
+
+    <!-- Script du calendrier -->
+    <script src="{% static 'events/js/calendar.js' %}" defer></script>
+{% endblock %}
