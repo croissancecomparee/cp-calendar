@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             return {
                 html: `<div class="event-title">${symbol} ${arg.event.title}</div>` +
-                      `<div class="event-title">${arg.event.title}</div>` +
                       `<div class="event-time">${arg.timeText}</div>`
             };
         },
