@@ -1,0 +1,70 @@
+/* Personnalisation des événements */
+.fc-event {
+    border-radius: 5px;
+    border: 1px solid #ff4500; /* Bordure des événements */
+    background-color: #ff6347; /* Couleur de fond par défaut */
+    color: white;
+    padding: 5px;
+}
+
+/* Personnalisation des titres des événements */
+.fc-event-title {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Personnalisation de la description */
+.fc-event-description {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Ajouter une icône avant le titre */
+.fc-event-title::before {
+    content: '📅 ';  /* Icône de calendrier */
+    margin-right: 5px;
+}
+
+
+@media (max-width: 600px) {
+    .fc-event-title {
+        font-size: 12px;
+    }
+    .fc-event-description {
+        font-size: 10px;
+    }
+}
+
+
+/* COLOUR LEGENDS  */
+
+.calendar-legend {
+    margin-top: 20px;
+}
+
+.calendar-legend h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.legend-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.legend-list li {
+    display: flex;
+    align-items: center;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    border-radius: 3px;
+}

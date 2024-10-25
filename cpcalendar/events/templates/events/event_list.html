@@ -1,5 +1,3 @@
-{% extends "base.html" %}
-
 {% load static %}
 
 {% block content %}
@@ -7,9 +5,27 @@
 
 
     <a href="{% url 'event_create' %}">Créer un nouvel événement</a>
+
+    <div class="calendar-legend">
+        <h3>Légende des événements</h3>
+        <ul class="legend-list">
+            
+            <li><span class="legend-color" style="background-color: var(--smash);"></span><span class="event-icon">🎮</span> Smash</li>
+            <li><span class="legend-color" style="background-color: var(--mtg);"></span> <span class="event-icon">🃏</span> Magic The Gathering</li>
+            <li><span class="legend-color" style="background-color: var(--street_fighter);"></span><span class="event-icon">🥋</span> Street Fighter</li>
+            <li><span class="legend-color" style="background-color: var(--rpg);"></span><span class="event-icon">🗡️</span> Jeux de roles</li>
+            <li><span class="legend-color" style="background-color: var(--board_games);"></span><span class="event-icon">🎲</span> Jeux de societe</li>
+            <li><span class="legend-color" style="background-color: var(--other);"></span><span class="event-icon">⭐</span> Autre</li>
+        </ul>
+    </div>
+    
+
     <!-- Calendrier avec les événements en JSON -->
     <div id="calendar" data-events='{{ events_json|safe }}'></div>
 
+
+    <!-- bootstrap inclusion to make sure bootstrap is well included -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Script du calendrier -->
     <script src="{% static 'events/js/calendar.js' %}" defer></script>
 {% endblock %}
