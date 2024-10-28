@@ -19,15 +19,15 @@ RECURRING_RULES = [
 
 class Event(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
-    location = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    location = models.CharField(max_length=200, blank=True)
     date = models.DateTimeField()
     type= models.CharField(
         max_length=50,
         choices=EVENT_TYPE_CHOICES,
         default="other"
     )
-    link = models.CharField(max_length=500)
+    link = models.CharField(max_length=500, blank=True)
     is_recurring = models.BooleanField(default=False)
     recurrence_rule = models.CharField(
         max_length=50,

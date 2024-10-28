@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             return {
                 html: `<div class="event-title">${symbol} ${arg.event.title}</div>` +
-                      `<div class="event-time">${arg.timeText}</div>`
+                      `<div class="event-time"></div>`
             };
         },
         eventBackgroundColor: '#f08a5d',  // Couleur par défaut des événements
@@ -88,3 +88,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     calendar.render();
 });
+
+
