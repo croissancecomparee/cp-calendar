@@ -1,8 +1,60 @@
-<h2>{{ event.title }}</h2>
-<p>{{ event.description }}</p>
-<p>Location: {{ event.location }}</p>
-<p>Date: {{ event.date }}</p>
-<p><a href="{{event.link}}">Lien d'inscription</a></p>
+{% load static %}
 
-<a href="{% url 'event_edit' event.id %}">Edit</a>
-<a href="{% url 'event_delete' event.id %}">Delete</a>
+<!-- bootstrap inclusion to make sure bootstrap is well included -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="container my-4 p-4 border roudned bg-light">
+    <h2 class="display-6 text-priary mb-3">{{ event.title }}</h2>
+
+
+    <p><strong>Description :</strong></p>
+    <p class="text-muted">{{ event.description }}</p>
+
+    <p><strong>Lieu: </strong>{{ event.location }}</p>
+    <p><strong>Date: </strong> {{ event.date }}</p>
+
+    <p><strong>Inscription: </strong>
+        <a href="{{event.link}}" class="btn btn-outline-primary btn-sm" target="_blank">Lien d'inscription</a>
+    </p>
+
+
+    <div class="mt-4">
+        <button class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#formModal" onclick="openFormInModal('{% url 'event_edit' event.id %}')">Modifier</button>
+        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#formModal" onclick="openFormInModal('{% url 'event_delete' event.id %}')">Supprimer</button>
+    </div>
+</div>
+
+<i>Cette page est temporaire et est améliorable</i>
+
+<!-- Modal pour editer l'evenement-->
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModalLabel">Modifier l'événement</h5>
+                <button typ="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="formContent"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal pour supprimer l'evenement-->
+ <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button typ="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="formContent"></div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+<!-- script du bouton du modal -->
+<script src="{% static 'events/js/createEventButton.js' %}"></script>
