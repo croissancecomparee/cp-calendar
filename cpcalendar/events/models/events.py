@@ -4,6 +4,7 @@ import datetime
 EVENT_TYPE_CHOICES = [
     ("smash","Smash"),
     ("mtg","MTG"),
+    ("lorcana", "Lorcana"),
     ("street_fighter","Street Fighter"),
     ("rpg","RPG"),
     ("board_games","Jeux de sociétés"),

@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var eventColors = {
         'smash': getCSSVariableValue('--smash'),            // Couleur pour Smash
         'mtg': getCSSVariableValue('--mtg'),                // Couleur pour Magic the Gathering
+        'lorcana': getCSSVariableValue('--lorcana'),                // Couleur pour Lorcana
         'street_fighter': getCSSVariableValue('--street_fighter'), // Couleur pour Street Fighter
         'rpg': getCSSVariableValue('--rpg'),                // Couleur pour RPG
         'board_games': getCSSVariableValue('--board_games'), // Couleur pour Jeux de société
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var eventSymbols = {
         'smash': '🎮',  // Icône de manette pour Smash
         'mtg': '🃏',    // Icône de carte pour Magic
+        'lorcana': '✨',           // Icône de disney pour Lorcana
         'street_fighter': '🥋',  // Icône de kimono pour Street Fighter
         'rpg': '🗡️',    // Icône d’épée pour RPG
         'board_games': '🎲',  // Icône de dé pour les jeux de société
